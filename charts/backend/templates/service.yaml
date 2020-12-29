@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app_name: {{ .Release.Name }}
+    app_version: {{ .Values.application.image.tag }}
+  {{- with .Values.application.service.annotations }}
+  annotations:
+{{ toYaml . | indent 4 }}
+  {{- end }}
+spec:
+  ports:
+    - name: http
+      port: 80
+      targetPort: {{ .Values.application.container.port }}
+  selector:
+    app_name: {{ .Release.Name }}
+
