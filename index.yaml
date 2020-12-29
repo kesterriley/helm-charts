@@ -11,4 +11,15 @@ entries:
     urls:
     - https://github.com/kesterriley/helm-charts/releases/download/demo-0.1.1/demo-0.1.1.tgz
     version: 0.1.1
+  qtcsystems:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2020-12-29T15:42:31.351808409Z"
+    description: A Helm chart for Kubernetes
+    digest: 128e8f345a09468b0b205431c5c46cf9ab9ee398b97660496f4fb1c2d8b839d8
+    name: qtcsystems
+    type: application
+    urls:
+    - https://github.com/kesterriley/helm-charts/releases/download/qtcsystems-0.1.2/qtcsystems-0.1.2.tgz
+    version: 0.1.2
 generated: "2020-12-29T15:00:17.022531164Z"
