@@ -23,7 +23,7 @@ application:
       # The port within the container to use for probing
       port: 80
     # Delay before probe is initiated in seconds
-    initialDelaySeconds: 60
+    initialDelaySeconds: 30
     # When the probe times out in seconds
     timeoutSeconds: 30
     # Minimum consecutive failures for the probe
@@ -36,7 +36,7 @@ application:
       # The port within the container to use for probing
       port: 80
     # Delay before probe is initiated in seconds
-    initialDelaySeconds: 60
+    initialDelaySeconds: 30
     # When the probe times out in seconds
     timeoutSeconds: 30
     # Minimum consecutive failures for the probe
@@ -82,16 +82,16 @@ application:
   #   secretKeyRef: first-key
 
   resources:
-    limits:
+    limits: {}
       # CPU resource limit (see https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#meaning-of-cpu)
-      cpu: "1.0"
+      # cpu: "1.0"
       # Memory resource limit (see https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#meaning-of-memory)
-      memory: 1024Mi
-    requests:
+      # memory: 1024Mi
+    requests: {}
       # CPU resource request (see https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#meaning-of-cpu)
-      cpu: 200m
+      # cpu: 200m
       # Memory resource request (see https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#meaning-of-memory)
-      memory: 1024Mi
+      # memory: 1024Mi
 
   autoscaling:
     # Toggle on and off whether to enable the pod autoscaler
