@@ -34,5 +34,17 @@ workflows:
   flow:
     jobs:
       - kubeval
+        filters:
+          branches:
+            ignore:
+              - gh-pages
       - lint
+        filters:
+          branches:
+            ignore:
+              - gh-pages
       - deprek8-check
+        filters:
+          branches:
+            ignore:
+              - gh-pages
