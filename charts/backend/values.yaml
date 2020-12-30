@@ -6,7 +6,7 @@ application:
 
   image:
     # Location of the container image for the actual application
-    repository: eu.gcr.io/example/example
+    repository: registry.digitalocean.com/qtc-systems/14xd
     # The version of the application
     tag: 0.0.0
     # Image pull policy (see https://kubernetes.io/docs/concepts/containers/images/#updating-images)
