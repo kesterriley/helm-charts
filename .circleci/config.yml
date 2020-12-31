@@ -40,7 +40,6 @@ jobs:
       branches:
         ignore:
           - gh-pages
-
 workflows:
   version: 2
   flow:
@@ -48,3 +47,12 @@ workflows:
       - kubeval
       - lint
       - deprek8-check
+      - publish:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - kubeval
+            - lint
+            - deprek8-check
