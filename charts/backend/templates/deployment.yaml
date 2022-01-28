@@ -10,6 +10,7 @@ metadata:
     reloader.stakater.com/auto: "true"
 spec:
   minReadySeconds: {{ .Values.application.minReadySeconds }}
+  revisionHistoryLimit: 2
   replicas: {{ .Values.application.replicaCount }}
   strategy:
     type: RollingUpdate
