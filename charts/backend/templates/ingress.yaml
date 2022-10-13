@@ -1,5 +1,5 @@
 {{- if .Values.application.ingress.enabled -}}
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: {{ .Release.Name }}
@@ -18,13 +18,17 @@ spec:
       paths:
         - path: {{ .Values.application.ingress.rootPath }}
           backend:
-            serviceName: {{ $.Release.Name }}
-            servicePort: 80
+            service:
+              name: {{ $.Release.Name }}
+              port: 
+                number: 80
         {{- range $path := .Values.application.ingress.additionalPaths }}
         - path: {{ $path.path }}
           backend:
-            serviceName: {{ $path.serviceName }}
-            servicePort: {{ $path.servicePort }}
+            service:
+              name: {{ $path.serviceName }}
+              port:
+                number: {{ $path.servicePort }}
         {{- end }}
   {{- if .Values.application.ingress.tls.enabled }}
   tls:
