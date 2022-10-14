@@ -16,21 +16,21 @@ spec:
   - host: {{ .Values.application.ingress.host }}
     http:
       paths:
-        - path: {{ .Values.application.ingress.rootPath }}
-          pathType: Prefix
-          backend:
-            service:
-              name: {{ $.Release.Name }}
-              port: 
-                number: 80
+      - path: {{ .Values.application.ingress.rootPath }}
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ $.Release.Name }}
+            port:
+              number: 80
         {{- range $path := .Values.application.ingress.additionalPaths }}
-        - path: {{ $path.path }}
-          pathType: Prefix
-          backend:
-            service:
-              name: {{ $path.serviceName }}
-              port:
-                number: {{ $path.servicePort }}
+      - path: {{ $path.path }}
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ $path.serviceName }}
+            port:
+              number: {{ $path.servicePort }}
         {{- end }}
   {{- if .Values.application.ingress.tls.enabled }}
   tls:
