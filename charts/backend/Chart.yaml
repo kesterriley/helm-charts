@@ -3,7 +3,7 @@ appVersion: "1.0"
 description: A chart for backend services
 home: https://github.com/kesterriley
 name: backend
-version: 2.1.10
+version: 2.1.11
 sources:
   - https://github.com/kesterriley
 maintainers:
