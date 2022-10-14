@@ -17,6 +17,7 @@ spec:
     http:
       paths:
         - path: {{ .Values.application.ingress.rootPath }}
+          pathType: Prefix
           backend:
             service:
               name: {{ $.Release.Name }}
@@ -24,6 +25,7 @@ spec:
                 number: 80
         {{- range $path := .Values.application.ingress.additionalPaths }}
         - path: {{ $path.path }}
+          pathType: Prefix
           backend:
             service:
               name: {{ $path.serviceName }}
