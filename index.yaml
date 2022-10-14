@@ -3,6 +3,22 @@ entries:
   backend:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2022-10-14T08:32:24.768889729Z"
+    description: A chart for backend services
+    digest: 32fcc3a4562f6015304b93f07f14b96ae6089eac3d2255ca0cc4e355e2489eeb
+    home: https://github.com/kesterriley
+    maintainers:
+    - email: kesterriley@hotmail.com
+      name: kesterriley
+      url: https://github.com/kesterriley
+    name: backend
+    sources:
+    - https://github.com/kesterriley
+    urls:
+    - https://github.com/kesterriley/helm-charts/releases/download/backend-2.1.12/backend-2.1.12.tgz
+    version: 2.1.12
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2022-10-14T08:13:01.234594765Z"
     description: A chart for backend services
     digest: 4fd8aaa515f81a4afa49ad14c37d4adfd72757926e26cbbb5c7a35fcc41fb373
